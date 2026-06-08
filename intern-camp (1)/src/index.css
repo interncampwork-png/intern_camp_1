@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,600;0,700;0,800;0,900;1,300;1,400;1,600;1,700;1,800;1,900&family=Nunito+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-nunito: "Nunito", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  --font-nunito-sans: "Nunito Sans", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+
+  --color-brand-white: #ffffff;
+  --color-brand-bg: #f7f8fc;
+  --color-brand-green: #5DBE6E;
+  --color-brand-yellow: #FFD246;
+  --color-brand-pink: #FF4F9A;
+  --color-brand-purple: #8B83E8;
+  --color-brand-black: #111111;
+  --color-brand-gray: #6b7280;
+  --color-brand-gray-lt: #e9edf5;
+
+  --radius-brand: 22px;
+  --shadow-brand: 0 4px 20px rgba(0, 0, 0, 0.07);
+}
+
+@layer base {
+  html {
+    @apply font-nunito-sans antialiased;
+  }
+  body {
+    @apply bg-brand-bg text-brand-black min-h-screen overflow-x-hidden;
+  }
+}
+
+.markdown-body {
+  @apply text-sm leading-relaxed;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-brand-bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-brand-gray-lt);
+  border-radius: 10px;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.75); }
+}
+
+.animate-pulse-custom {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-8px) rotate(5deg); }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes floatB {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px) rotate(-4deg); }
+}
+
+.animate-float-b {
+  animation: floatB 5s ease-in-out infinite;
+}
